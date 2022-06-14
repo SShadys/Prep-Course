@@ -267,15 +267,20 @@ function continueStatement(numero) {
   // Tu código:
   let array = [];
   let valor = numero;
+
   for (let i = 0; i < 10; i++) {
+
     if (i === 5) {
       continue;
+
     } else {
+
     valor = valor + 2
     array.push(valor)
+    
     }
   }
-  return array;
+  return array; 
 }
 
 
