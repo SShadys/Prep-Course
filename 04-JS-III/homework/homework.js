@@ -32,14 +32,14 @@ function incrementarPorUno(array) {
   // y devuelve el array
   // Tu código:
  
-  newArray = [];
+  let newArray = [];
 
   for (let i = 0; i < array.length; i++){
-    array[i] = array[i] + 1
-    newArray.push(array[i]);
-  }
+      array[i] = array[i] + 1;
+      newArray.push(array[i]);
 
-    return newArray;
+  }
+  return newArray;
 }
 
 
@@ -49,7 +49,7 @@ function agregarItemAlFinalDelArray(array, elemento) {
   // Tu código:
 
   array.push(elemento);
-  return  array;
+  return array;
 }
 
 
@@ -60,7 +60,7 @@ function agregarItemAlComienzoDelArray(array, elemento) {
   // Tu código:
 
   array.unshift(elemento);
-  return  array;
+  return array;
 }
 
 
@@ -71,7 +71,7 @@ function dePalabrasAFrase(palabras) {
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
 
-  return palabras.join(' ')
+  return palabras.join(' ');
 }
 
 
@@ -84,6 +84,7 @@ function arrayContiene(array, elemento) {
       if (array[i] === elemento){
         return true;
       }
+
   }
     return false;
 }
@@ -97,8 +98,9 @@ function agregarNumeros(numeros) {
   let valor = 0;
 
   for (let i = 0; i < numeros.length; i++){
-      valor = valor + numeros[i];
+      valor = valor + numeros[i]
   }
+
     return valor;
 }
 
@@ -108,14 +110,14 @@ function promedioResultadosTest(resultadosTest) {
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
 
-  let promedio = 0;
+  promedio = 0;
 
   for (let i = 0; i < resultadosTest.length; i++){
-      promedio = promedio + resultadosTest[i];
+      promedio = promedio + resultadosTest[i]
   }
 
-      promedio = promedio / resultadosTest.length;
-      return promedio
+  promedio = promedio / resultadosTest.length;
+  return promedio;
 }
 
 
@@ -127,12 +129,10 @@ function numeroMasGrande(numeros) {
   let masGrande = 0;
 
   for (let i = 0; i < numeros.length; i++){
-  
       if (numeros[i] > masGrande){
-        masGrande = numeros[i];
+        masGrande = numeros[i]
       }
   }
-
     return masGrande;
 }
 
@@ -141,17 +141,15 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
+
+  let total = 1;
+
+  if (arguments.length < 1){return 0;}
   
-  let resultado = 1;
-
-  if (arguments.length < 1){
-    return 0;
-  }
-
   for (let i = 0; i < arguments.length; i++){
-    resultado = resultado * arguments[i];
+      total = total * arguments[i]
   }
-    return resultado;
+    return total;
 }
 
 
@@ -159,14 +157,14 @@ function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
  
-  let contador = 0;
+  let counter = 0;
 
   for (let i = 0; i < arreglo.length; i++){
-      if (arreglo[i] > 18){
-        contador = contador + 1;
+      if( arreglo[i] > 18){
+        counter = counter + 1;
       }
   }
-    return contador;
+    return counter;
 }
 
 
@@ -176,15 +174,11 @@ function diaDeLaSemana(numeroDeDia) {
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí   
 
-  switch (numeroDeDia){
-      case 1: return 'Es fin de semana';
-      case 2: return 'Es dia Laboral';
-      case 3: return 'Es dia Laboral';
-      case 4: return 'Es dia Laboral';
-      case 5: return 'Es dia Laboral';
-      case 6: return 'Es dia Laboral';
-      case 7: return 'Es fin de semana';
-  }  
+  if (numeroDeDia === 1 || numeroDeDia === 7){
+      return 'Es fin de semana';
+
+  }
+    return 'Es dia Laboral';
 } 
 
 
@@ -193,10 +187,11 @@ function empiezaConNueve(n) {
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
 
-  let num = n.toString()
+  let numero = n.toString();
 
-  if (num.charAt(0) === '9'){
+  if (numero.charAt(0) === '9'){
       return true;
+
   }
     return false;
 } 
@@ -209,7 +204,7 @@ function todosIguales(arreglo) {
 
   for (let i = 0; i < arreglo.length - 1; i++){
       if (arreglo[i] !== arreglo[i+1]){
-        return false;
+          return false;
       }
   }
     return true;
@@ -221,20 +216,18 @@ function mesesDelAño(array) {
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
 
-  let meses = [];
+ let meses = [];
 
-  for (let i = 0; i < array.length; i++){
-
-    if (array[i] === 'Enero' || array[i] === 'Marzo' || array[i] === 'Noviembre'){
-      meses.push(array[i])
-    }
-  }
-
-  if (meses.length === 3){
-    return meses;
+ for (let i = 0; i < array.length; i++){
+      if (array[i] === 'Enero' || array[i] === 'Marzo' || array[i] === 'Noviembre'){
+          meses.push(array[i]);
+      }
+ }
+  if (meses.length !== 3){
+      return 'No se encontraron los meses pedidos';
 
   } 
-    return 'No se encontraron los meses pedidos';
+    return meses;
 }
 
 
@@ -243,15 +236,14 @@ function mayorACien(array) {
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
 
-  let mayor100 = [];
+  let newArray = []
 
   for (let i = 0; i < array.length; i++){
-    
       if (array[i] > 100){
-        mayor100.push(array[i])
+        newArray.push(array[i])
       }
   }
-    return mayor100;
+    return newArray;
 }
 
 
@@ -264,17 +256,17 @@ function breakStatement(numero) {
   //Pista: usá el statement 'break'
   // Tu código:
 
-  let valor = [];
-
+  let array = []
+  
   for (let i = 0; i < 10; i++){
-
-    if (i === numero) {return 'Se interrumpió la ejecución'}
-
-    numero = numero + 2;
-    valor.push(numero)
+    
+    if (numero === i){return 'Se interrumpió la ejecución'}
+    
+      numero = numero + 2;
+      array.push(numero);
 
   }
-    return valor;
+    return array;
 }
 
 
@@ -286,17 +278,18 @@ function continueStatement(numero) {
   //Pista: usá el statement 'continue'
   // Tu código:
 
-  let valor = [];
+  let array = [];
 
-  for (let i = 0; i < 10; i++){
+  for ( let i = 0; i < 10; i++){
+      if (i === 5){
+        continue;
+      }
 
-      if (i === 5) continue;
-
-      numero = numero + 2
-      valor.push(numero)
-
+      numero = numero + 2;
+      array.push(numero);
+      
   }
-    return valor;
+    return array;
 }
 
 
